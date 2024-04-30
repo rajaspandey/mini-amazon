@@ -1,4 +1,4 @@
-# Mini Amazon Course Project.
+# Mini Amazon Course Project
 
 Skeleton code originally created by [Rickard
 Stureborg](http://www.rickard.stureborg.com) and [Yihao
