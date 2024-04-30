@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container">
+    <h2>Seller's Inventory</h2>
+    <form method="post">
+      <div class="form-group">
+        <label for="sellerId">Enter Seller ID:</label>
+        <input type="text" class="form-control" id="sellerId" name="sellerId">
+      </div>
+      <button type="submit" class="btn btn-primary">Show Inventory</button>
+    </form>
+
+    {% if seller_id %}
+      <h3>Inventory for Seller {{ seller_id }}</h3>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Seller Id</th>
+            <th>Product Name</th>
+            <th>Quantity in stock</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for product in inventory %}
+            <tr>
+              <td>{{ product.sid }}</td>
+              <td>{{ product.name }}</td>
+              <td>{{ product.quantity_in_stock }}</td>
+              <td>{{ product.price }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% endif %}
+  </div>
+{% endblock %}

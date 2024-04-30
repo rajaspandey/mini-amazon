@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container">
+    <h2>5 most recent feedback</h2>
+    <form method="post">
+      <div class="form-group">
+        <label for="sellerId">Enter User ID:</label>
+        <input type="text" class="form-control" id="userId" name="userId">
+      </div>
+      <button type="submit" class="btn btn-primary">Show most recent feedback</button>
+    </form>
+
+    {% if user_id %}
+      <h3>Most recent feedbacks by user {{ user_id }}</h3>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>User Id</th>
+            <th>Product/Seller Id</th>
+            <th>Feedback</th>
+            <th>Stars</th>
+            <th>Review Date</th>
+            <th>Product or Seller</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in feedback %}
+            <tr>
+              <td>{{ item.user_id }}</td>
+              <td>{{ item.name }}</td>
+              <td>{{ item.feedback }}</td>
+              <td>{{ item.stars }}</td>
+                <td>{{ item.review_date }}</td>
+                <td>{{ item.product_or_seller }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% endif %}
+  </div>
+{% endblock %}
