@@ -1,38 +1,9 @@
-# Skeleton Code for CompSci 316 Standard Course Project.
+# Mini Amazon Course Project.
 
-Originally created by [Rickard
+Skeleton code originally created by [Rickard
 Stureborg](http://www.rickard.stureborg.com) and [Yihao
 Hu](https://www.linkedin.com/in/yihaoh/) for Fall 2021.  Amended by
 various teaching staff in subsequent years.
-
-We assume you are in your course container shell.  If you have a
-different setup, your mileage with the following instructions may
-vary.
-
-## Installing the Current Skeleton
-
-1. One (and only one) team member should fork this repo by clicking
-   the small 'Fork' button at the very top right on GitLab.  It's
-   important that you fork first, because if you clone this repo
-   directly you won't be able to push changes (save your progress)
-   back to this repo (which is owned by the teaching staff).  Name
-   your forked repo as you prefer.
-
-   In your newly forked repo, find the blue "Clone" button.  Copy the
-   "Clone with SSH" text.  Add your teammates as members of your
-   project as "Maintainers."  Share the copied text with your
-   teammates so they have access to this repo too.
-
-   The remaining steps should be carried out by all team members.
-
-2. In your container shell, issue the command `git clone
-   THE_TEXT_YOU_JUST_COPIED` (make sure to replace
-   `THE_TEXT_YOU_JUST_COPIED` with the "Clone with SSH" text).
-   
-3. In your container shell, change into the repository directory and
-   then run `./install.sh`.  This will install a bunch of things, set
-   up an important file called `.flashenv`, and creates a simple
-   PostgreSQL database named `amazon`.
 
 ## Running/Stopping the Website
 
@@ -56,23 +27,6 @@ Depending on your setup, the URL will be different:
 * If you use containers on your own laptop, point your browser to
   http://localhost:8080/
 
-* If you use the Duke OIT container, visit
-  https://cmgr.oit.duke.edu/containers and open the CONTAINER CONTROLS
-  info pane for your CS316 container.  There will be a line specifying
-  a user-specific URL for accessing a Flask app.  Point your browser
-  to that URL.
-
-  - If you are using VSCode to access your Duke OIT container and
-    run/debug your project from there (by following these
-    instructions), then VSCode will do some (SSH port forwarding)
-    magic to make your Flask app also accessible at
-    http://localhost:8080/
-
-To stop your app, type <kbd>CTRL</kbd>-<kbd>C</kbd> in the container
-shell; that will take you back to the command-line prompt, still
-inside the `poetry` environment. If you are all done with this app for
-now, you can type `exit` to get out of the `poetry` environment and
-get back to the normal container shell.
 
 ## Working with the Database
 
@@ -128,12 +82,3 @@ running `python gen.py`.
   password value you should put in a CSV file, see `db/data/gen.py`
   for example of how to compute the hashed value.
 
-## Note on Hiding Credentials
-
-Use the file `.flaskenv` for passwords/secret keys --- we are talking
-about passwords used to access your database server, for example (not
-user passwords for your website in CSV files described earlier).  This
-file is NOT tracked by `git` and it was automatically generated when
-you first ran `./install.sh`.  Don't check it into `git` because your
-credentials would be exposed to everybody on GitLab if you are not
-careful.
